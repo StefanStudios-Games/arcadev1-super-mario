@@ -1,4 +1,7 @@
-let mySprite = sprites.create(img`
+function InitLevel () {
+	
+}
+let superMario = sprites.create(img`
 . . . . 2 2 2 2 . . . . 
 . . . 2 2 2 2 2 2 2 2 . 
 . . . e e e 4 4 4 . . . 
@@ -19,3 +22,4 @@ let mySprite = sprites.create(img`
 . e e e . . . . e e e . 
 e e e e . . . . e e e e 
 `, SpriteKind.Player)
+controller.moveSprite(superMario, 100, 0)
