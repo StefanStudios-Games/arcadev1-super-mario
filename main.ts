@@ -1,5 +1,9 @@
 function InitLevel () {
-	
+    if (true) {
+    	
+    } else {
+    	
+    }
 }
 let superMario = sprites.create(img`
 . . . . 2 2 2 2 . . . . 
@@ -23,3 +27,6 @@ let superMario = sprites.create(img`
 e e e e . . . . e e e e 
 `, SpriteKind.Player)
 controller.moveSprite(superMario, 100, 0)
+scene.setBackgroundColor(9)
+let LEVEL = 1
+InitLevel()
