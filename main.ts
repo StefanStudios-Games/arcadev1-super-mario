@@ -108,6 +108,13 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         superMario.vy = -115
     }
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, otherSprite) {
+    if (superMario.y > musharoom.y) {
+        otherSprite.destroy()
+    } else {
+    	
+    }
+})
 function InitLevel () {
     if (LEVEL == 1) {
         tiles.setTilemap(tiles.createTilemap(
@@ -328,10 +335,11 @@ f f f d d d d d d d d d f f f
 `, SpriteKind.musharoom)
         tiles.placeOnTile(musharoom, value)
         musharoom.ay = 200
+        musharoom.vx = 50
     }
 }
-let musharoom: Sprite = null
 let COIN_: Sprite = null
+let musharoom: Sprite = null
 let LEVEL = 0
 let superMario: Sprite = null
 superMario = sprites.create(img`
@@ -361,3 +369,11 @@ LEVEL = 1
 InitLevel()
 superMario.ay = 200
 scene.cameraFollowSprite(superMario)
+forever(function () {
+    if (musharoom.isHittingTile(CollisionDirection.Right)) {
+        musharoom.vx = -50
+    }
+    if (musharoom.isHittingTile(CollisionDirection.Left)) {
+        musharoom.vx = 50
+    }
+})
