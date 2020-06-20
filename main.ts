@@ -1,5 +1,6 @@
 namespace SpriteKind {
     export const coin = SpriteKind.create()
+    export const musharoom = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -309,29 +310,24 @@ function InitLevel () {
     for (let value of tiles.getTilesByType(myTiles.tile4)) {
         tiles.setTileAt(value, myTiles.tile0)
         musharoom = sprites.create(img`
-. . . . . . . . . . . . . . . 
-. . . . . . f f f . . . . . . 
-. . . . . f 5 5 5 f . . . . . 
-. . . . f 5 5 4 5 5 f . . . . 
-. . . f 5 5 5 5 5 5 5 f . . . 
-. . . f 5 4 5 5 4 5 5 f . . . 
-. . . f 5 4 5 5 5 4 5 f . . . 
-. . . f 5 4 5 5 5 4 5 f . . . 
-. . . f 5 5 5 5 5 5 5 f . . . 
-. . . f 5 5 5 4 4 5 5 f . . . 
-. . . f 5 5 5 5 4 5 5 f . . . 
-. . . . f 5 5 5 5 5 f . . . . 
-. . . . . f 5 5 5 f . . . . . 
-. . . . . . f f f . . . . . . 
-. . . . . . . . . . . . . . . 
-`, SpriteKind.coin)
+. . . . . . e e e . . . . . . 
+. . . . . e e e e e . . . . . 
+. . . . e e e e e e e . . . . 
+. . . e f e e e e e f e . . . 
+. . e e e f f e f f e e e . . 
+. e e e e e e f e e e e e e . 
+e e e e 1 1 1 e 1 1 1 e e e e 
+. . . d 1 f 1 d 1 f 1 d . . . 
+. . . d 1 1 1 d 1 1 1 d . . . 
+. . . d d d d d d d d d . . . 
+. . . d d d d d d d d d . . . 
+. . . d d d d d d d d d . . . 
+f f f d d d d d d d d d f f f 
+f f f d d d d d d d d d f f f 
+f f f d d d d d d d d d f f f 
+`, SpriteKind.musharoom)
         tiles.placeOnTile(musharoom, value)
         musharoom.ay = 200
-        if (Math.percentChance(50)) {
-        	
-        } else {
-        	
-        }
     }
 }
 let musharoom: Sprite = null
