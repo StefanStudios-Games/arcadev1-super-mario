@@ -109,7 +109,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, otherSprite) {
-    if (superMario.y > musharoom.y) {
+    if (superMario.y > otherSprite.y) {
         otherSprite.destroy()
     } else {
     	
@@ -338,8 +338,8 @@ f f f d d d d d d d d d f f f
         musharoom.vx = 50
     }
 }
-let COIN_: Sprite = null
 let musharoom: Sprite = null
+let COIN_: Sprite = null
 let LEVEL = 0
 let superMario: Sprite = null
 superMario = sprites.create(img`
