@@ -1,18 +1,21 @@
 <xml xmlns="https://developers.google.com/blockly/xml"><variables><variable id="/}Bv9K^*m9y4njSS4aU;">mySprite</variable><variable type="KIND_SpriteKind" id="k^ia/ZJ31TrCJyD1Bc[y">Player</variable><variable type="KIND_SpriteKind" id="@[p#gWUBz+yu?:KxP(L$">Projectile</variable><variable type="KIND_SpriteKind" id="bGoGg;e1y-)8_7z?EAER">Food</variable><variable type="KIND_SpriteKind" id="1{J}kq?,fc{5.h@O`/UX">Enemy</variable></variables><block type="pxt-on-start" id=",Xp3z}{K_WPo@?YxN52j" x="0" y="0"><statement name="HANDLER"><block type="variables_set" id="Tc3tT/Kx3mZU(Bx`+kq%"><field name="VAR" id="/}Bv9K^*m9y4njSS4aU;">mySprite</field><value name="VALUE"><shadow xmlns="http://www.w3.org/1999/xhtml" type="math_number"><field name="NUM">0</field></shadow><block type="spritescreate" id=")MR_)c2fD[62C-ol@W%O"><value name="img"><shadow type="screen_image_picker" id="!9AE0q2`-}_=cQXB`twE"><field name="img">img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 8 2 2 2 . . . . . . 
-. . . . . 2 8 2 2 8 2 . . . . . 
-. . . . 2 2 8 2 2 8 2 2 . . . . 
-. . . 2 2 2 8 8 8 8 2 2 2 . . . 
-. . 2 2 2 8 5 8 8 5 8 2 2 2 . . 
-. . 4 4 2 8 8 8 8 8 8 2 4 4 . . 
-. . 4 4 4 8 8 8 8 8 8 4 4 4 . . 
-. . 4 4 8 8 8 8 8 8 8 8 4 4 . . 
-. . . . 8 8 8 . . 8 8 8 . . . . 
-. . . e e e . . . . e e e . . . 
-. . e e e e . . . . e e e e . . 
+. . . . 2 2 2 2 . . . . 
+. . . 2 2 2 2 2 2 2 2 . 
+. . . e e e 4 4 4 . . . 
+. . e 4 e 4 4 f 4 . . . 
+. . e 4 e e 4 f 4 4 4 . 
+. . e e 4 4 4 4 e 4 4 4 
+. . . . 4 4 4 e e e e . 
+. . . . . 4 4 4 4 4 . . 
+. . . . 8 2 2 2 . . . . 
+. . . 2 8 2 2 8 2 . . . 
+. . 2 2 8 2 2 8 2 2 . . 
+. 2 2 2 8 8 8 8 2 2 2 . 
+2 2 2 8 5 8 8 5 8 2 2 2 
+4 4 2 8 8 8 8 8 8 2 4 4 
+4 4 4 8 8 8 8 8 8 4 4 4 
+4 4 8 8 8 8 8 8 8 8 4 4 
+. . 8 8 8 . . 8 8 8 . . 
+. e e e . . . . e e e . 
+e e e e . . . . e e e e 
 `</field></shadow></value><value name="kind"><shadow type="spritekind" id="Yxg2!ezP.bC%K[UU)eR}"><field name="MEMBER">Player</field></shadow></value></block></value></block></statement></block></xml>
