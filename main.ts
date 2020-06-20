@@ -58,7 +58,9 @@ f f f f f f f f f f f f f f f f
 `
 }
 controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
-	
+    if (superMario.vy == 0) {
+        superMario.vy = -115
+    }
 })
 function InitLevel () {
     if (LEVEL == 1) {
