@@ -119,6 +119,32 @@ f f f f f f f f f f f f f f f f
 2 2 f 2 2 2 2 f 2 2 2 2 f 2 2 2 
 `
 }
+function marioDie () {
+    superMario.setImage(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 2 2 2 2 . . . . . . 
+. . . . . 2 2 2 2 2 2 . . . . . 
+. . . . . 4 f 4 4 f 4 . . . . . 
+. . . . . 4 f e e f 4 . . . . . 
+. . . . . 4 e e e e 4 . . . . . 
+. . . 4 4 4 4 4 4 4 4 4 4 . . . 
+. . 4 4 4 . 4 4 4 4 . 4 4 4 . . 
+. . . 4 4 . 2 2 2 2 . 4 4 . . . 
+. . . 8 8 8 2 2 2 2 8 8 8 . . . 
+. . e e 8 8 2 2 2 2 8 8 e e . . 
+. . e e e 8 8 2 2 8 8 e e e . . 
+. . e e e 8 5 8 8 5 8 e e e . . 
+. . e e e 8 8 8 8 8 8 e e e . . 
+. . . e e 8 8 8 8 8 8 e e . . . 
+`)
+    superMario.ay = -200
+    pause(500)
+    superMario.ay = 200
+    pause(1000)
+    InitLevel()
+    info.changeLifeBy(-1)
+}
 sprites.onOverlap(SpriteKind.Player, SpriteKind.coin, function (sprite, otherSprite) {
     otherSprite.destroy()
     info.changeScoreBy(1)
@@ -143,34 +169,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, oth
         otherSprite.destroy(effects.spray, 500)
     } else {
         otherSprite.destroy()
-        superMario.setImage(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 2 2 2 2 . . . . . . 
-. . . . . 2 2 2 2 2 2 . . . . . 
-. . . . . 4 f 4 4 f 4 . . . . . 
-. . . . . 4 f e e f 4 . . . . . 
-. . . . . 4 e e e e 4 . . . . . 
-. . . 4 4 4 4 4 4 4 4 4 4 . . . 
-. . 4 4 4 . 4 4 4 4 . 4 4 4 . . 
-. . . 4 4 . 2 2 2 2 . 4 4 . . . 
-. . . 8 8 8 2 2 2 2 8 8 8 . . . 
-. . e e 8 8 2 2 2 2 8 8 e e . . 
-. . e e e 8 8 2 2 8 8 e e e . . 
-. . e e e 8 5 8 8 5 8 e e e . . 
-. . e e e 8 8 8 8 8 8 e e e . . 
-. . . e e 8 8 8 8 8 8 e e . . . 
-`)
-        for (let index = 0; index < 4; index++) {
-            superMario.y += -5
-            pause(50)
-        }
-        for (let index = 0; index < 6; index++) {
-            superMario.y += 10
-            pause(100)
-        }
-        InitLevel()
-        info.changeLifeBy(-1)
+        marioDie()
     }
 })
 function InitLevel () {
