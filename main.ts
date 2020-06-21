@@ -136,7 +136,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.block, function (sprite, otherSp
     false
     )
     pause(100)
-    otherSprite.destroy()
+    otherSprite.destroy(effects.ashes, 200)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, otherSprite) {
     if (superMario.y > otherSprite.y) {
