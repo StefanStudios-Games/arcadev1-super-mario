@@ -140,7 +140,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.block, function (sprite, otherSp
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, otherSprite) {
     if (sprite.y < otherSprite.top) {
-        otherSprite.destroy()
+        otherSprite.destroy(effects.spray, 500)
     } else {
         otherSprite.destroy()
         superMario.setImage(img`
@@ -149,9 +149,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, oth
 . . . . . . 2 2 2 2 . . . . . . 
 . . . . . 2 2 2 2 2 2 . . . . . 
 . . . . . 4 f 4 4 f 4 . . . . . 
-. . . . . 4 f 4 4 f 4 . . . . . 
+. . . . . 4 f e e f 4 . . . . . 
 . . . . . 4 e e e e 4 . . . . . 
-. . . 4 4 4 4 e e 4 4 4 4 . . . 
+. . . 4 4 4 4 4 4 4 4 4 4 . . . 
 . . 4 4 4 . 4 4 4 4 . 4 4 4 . . 
 . . . 4 4 . 2 2 2 2 . 4 4 . . . 
 . . . 8 8 8 2 2 2 2 8 8 8 . . . 
@@ -170,6 +170,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, oth
             pause(100)
         }
         InitLevel()
+        info.changeLifeBy(-1)
     }
 })
 function InitLevel () {
