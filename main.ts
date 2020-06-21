@@ -336,6 +336,7 @@ f f f d d d d d d d d d f f f
         tiles.placeOnTile(musharoom, value)
         musharoom.ay = 200
         musharoom.vx = 50
+        musharoom.setFlag(SpriteFlag.BounceOnWall, true)
     }
 }
 let musharoom: Sprite = null
@@ -369,11 +370,3 @@ LEVEL = 1
 InitLevel()
 superMario.ay = 200
 scene.cameraFollowSprite(superMario)
-forever(function () {
-    if (musharoom.isHittingTile(CollisionDirection.Right)) {
-        musharoom.vx = -50
-    }
-    if (musharoom.isHittingTile(CollisionDirection.Left)) {
-        musharoom.vx = 50
-    }
-})
