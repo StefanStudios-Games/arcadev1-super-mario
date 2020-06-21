@@ -142,7 +142,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, oth
     if (sprite.y < otherSprite.top) {
         otherSprite.destroy()
     } else {
-    	
+        info.changeLifeBy(-1)
     }
 })
 function InitLevel () {
@@ -396,6 +396,7 @@ let musharoom: Sprite = null
 let COIN_: Sprite = null
 let LEVEL = 0
 let superMario: Sprite = null
+info.setLife(3)
 superMario = sprites.create(img`
 . . . . 2 2 2 2 . . . . 
 . . . 2 2 2 2 2 2 2 2 . 
