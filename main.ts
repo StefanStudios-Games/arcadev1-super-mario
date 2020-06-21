@@ -142,7 +142,34 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, oth
     if (sprite.y < otherSprite.top) {
         otherSprite.destroy()
     } else {
-        info.changeLifeBy(-1)
+        otherSprite.destroy()
+        superMario.setImage(img`
+. . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . 
+. . . . . . 2 2 2 2 . . . . . . 
+. . . . . 2 2 2 2 2 2 . . . . . 
+. . . . . 4 f 4 4 f 4 . . . . . 
+. . . . . 4 f 4 4 f 4 . . . . . 
+. . . . . 4 e e e e 4 . . . . . 
+. . . 4 4 4 4 e e 4 4 4 4 . . . 
+. . 4 4 4 . 4 4 4 4 . 4 4 4 . . 
+. . . 4 4 . 2 2 2 2 . 4 4 . . . 
+. . . 8 8 8 2 2 2 2 8 8 8 . . . 
+. . e e 8 8 2 2 2 2 8 8 e e . . 
+. . e e e 8 8 2 2 8 8 e e e . . 
+. . e e e 8 5 8 8 5 8 e e e . . 
+. . e e e 8 8 8 8 8 8 e e e . . 
+. . . e e 8 8 8 8 8 8 e e . . . 
+`)
+        for (let index = 0; index < 4; index++) {
+            superMario.y += -5
+            pause(50)
+        }
+        for (let index = 0; index < 6; index++) {
+            superMario.y += 10
+            pause(100)
+        }
+        InitLevel()
     }
 })
 function InitLevel () {
@@ -344,6 +371,27 @@ function InitLevel () {
         true
         )
     }
+    superMario.setImage(img`
+. . . . 2 2 2 2 . . . . 
+. . . 2 2 2 2 2 2 2 2 . 
+. . . e e e 4 4 4 . . . 
+. . e 4 e 4 4 f 4 . . . 
+. . e 4 e e 4 f 4 4 4 . 
+. . e e 4 4 4 4 e 4 . . 
+. . . . 4 4 4 e e e . . 
+. . . . . 4 4 4 4 . . . 
+. . . . 8 2 2 2 . . . . 
+. . . 2 8 2 2 8 2 . . . 
+. . 2 2 8 2 2 8 2 2 . . 
+. 2 2 2 8 8 8 8 2 2 2 . 
+2 2 2 8 5 8 8 5 8 2 2 2 
+4 4 2 8 8 8 8 8 8 2 4 4 
+4 4 4 8 8 8 8 8 8 4 4 4 
+4 4 8 8 8 8 8 8 8 8 4 4 
+. . 8 8 8 . . 8 8 8 . . 
+. e e e . . . . e e e . 
+e e e e . . . . e e e e 
+`)
     for (let value of tiles.getTilesByType(myTiles.tile4)) {
         tiles.setTileAt(value, myTiles.tile0)
         musharoom = sprites.create(img`
