@@ -491,3 +491,34 @@ LEVEL = 1
 InitLevel()
 superMario.ay = 200
 scene.cameraFollowSprite(superMario)
+game.onUpdate(function () {
+    superMario.setImage(img`
+. . . . 2 2 2 2 . . . . 
+. . . 2 2 2 2 2 2 2 2 . 
+. . . e e e 4 4 4 . . . 
+. . e 4 e 4 4 f 4 . . . 
+. . e 4 e e 4 f 4 4 4 . 
+. . e e 4 4 4 4 e 4 . . 
+. . . . 4 4 4 e e e . . 
+. . . . . 4 4 4 4 . . . 
+. . . . 8 2 2 2 . . . . 
+. . . 2 8 2 2 8 2 . . . 
+. . 2 2 8 2 2 8 2 2 . . 
+. 2 2 2 8 8 8 8 2 2 2 . 
+2 2 2 8 5 8 8 5 8 2 2 2 
+4 4 2 8 8 8 8 8 8 2 4 4 
+4 4 4 8 8 8 8 8 8 4 4 4 
+4 4 8 8 8 8 8 8 8 8 4 4 
+. . 8 8 8 . . 8 8 8 . . 
+. e e e . . . . e e e . 
+e e e e . . . . e e e e 
+`)
+    if (superMario.vx < 0) {
+    	
+    }
+    if (superMario.vy < 0) {
+    	
+    } else {
+    	
+    }
+})
