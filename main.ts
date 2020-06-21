@@ -120,9 +120,6 @@ f f f f f f f f f f f f f f f f
 `
     //% blockIdentity=images._tile
     export const tile6 = img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
 f f f f f f f f f f f f f f f f 
 f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
 f 7 7 7 7 7 7 7 7 7 7 7 7 7 7 f 
@@ -131,6 +128,9 @@ f f f f f f f f f f f f f f f f
 . . . . f 7 7 7 d e f f . . . . 
 . . . . f 7 7 7 7 d e f . . . . 
 . . . . f 7 7 7 7 7 d f . . . . 
+. . . . f 7 7 7 7 7 7 f . . . . 
+. . . . f 7 7 7 7 7 7 f . . . . 
+. . . . f 7 7 7 7 7 7 f . . . . 
 . . . . f 7 7 7 7 7 7 f . . . . 
 . . . . f 7 7 7 7 7 7 f . . . . 
 . . . . f 7 7 7 7 7 7 f . . . . 
@@ -517,9 +517,29 @@ e e e e . . . . e e e e
         superMario.image.flipX()
     }
     if (superMario.x % 2 == 0) {
-    	
-    }
-    if (superMario.vx < 0) {
-        superMario.image.flipX()
+        superMario.setImage(img`
+. . . . 2 2 2 2 . . . . 
+. . . 2 2 2 2 2 2 2 2 . 
+. . . e e e 4 4 4 . . . 
+. . e 4 e 4 4 f 4 . . . 
+. . e 4 e e 4 f 4 4 4 . 
+. . e e 4 4 4 4 e 4 . . 
+. . . . 4 4 4 e e e . . 
+. . . . . 4 4 4 4 . . . 
+. . . . 8 2 2 2 . . . . 
+. . . 2 8 2 2 8 2 . . . 
+. . 2 2 8 2 2 8 2 2 . . 
+. 2 2 2 8 8 8 8 2 2 2 . 
+2 2 2 8 5 8 8 5 8 2 2 2 
+4 4 2 8 8 8 8 8 8 2 4 4 
+4 4 4 8 8 8 8 8 8 4 4 4 
+4 4 8 8 8 8 8 8 8 8 4 4 
+. . . . 8 8 8 8 8 . . . 
+. . . e e e . e e e . . 
+. . e e e e . e e e e . 
+`)
+        if (superMario.vx < 0) {
+            superMario.image.flipX()
+        }
     }
 })
