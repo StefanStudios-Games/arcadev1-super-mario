@@ -514,11 +514,12 @@ game.onUpdate(function () {
 e e e e . . . . e e e e 
 `)
     if (superMario.vx < 0) {
+        superMario.image.flipX()
+    }
+    if (superMario.x % 2 == 0) {
     	
     }
-    if (superMario.vy < 0) {
-    	
-    } else {
-    	
+    if (superMario.vx < 0) {
+        superMario.image.flipX()
     }
 })
