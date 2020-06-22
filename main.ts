@@ -2,6 +2,7 @@ namespace SpriteKind {
     export const coin = SpriteKind.create()
     export const musharoom = SpriteKind.create()
     export const block = SpriteKind.create()
+    export const plant = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -475,8 +476,7 @@ f f f f f f f f f f f f f f f f
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
-`, SpriteKind.block)
-        plant.y += -20
+`, SpriteKind.plant)
         animation.runImageAnimation(
         plant,
         [img`
@@ -1283,6 +1283,7 @@ f f f f f f f f f f f f f f f f
         true
         )
         tiles.placeOnTile(plant, value)
+        plant.y += -16
     }
 }
 let plant: Sprite = null
