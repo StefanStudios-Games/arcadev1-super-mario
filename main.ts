@@ -1286,6 +1286,10 @@ f f f f f f f f f f f f f f f f
         plant.y += -16
     }
 }
+sprites.onOverlap(SpriteKind.Player, SpriteKind.plant, function (sprite, otherSprite) {
+    marioDie()
+    otherSprite.destroy()
+})
 let plant: Sprite = null
 let braking_block: Sprite = null
 let musharoom: Sprite = null
