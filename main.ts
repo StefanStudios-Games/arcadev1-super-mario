@@ -3,6 +3,7 @@ namespace SpriteKind {
     export const musharoom = SpriteKind.create()
     export const block = SpriteKind.create()
     export const plant = SpriteKind.create()
+    export const box = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -212,6 +213,18 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         superMario.vy = -115
     }
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.box, function (sprite, otherSprite) {
+    randomItemofBox = Math.randomRange(1, 4)
+    if (randomItemofBox == 1) {
+    	
+    } else if (randomItemofBox == 2) {
+    	
+    } else if (randomItemofBox == 3) {
+    	
+    } else if (randomItemofBox == 4) {
+    	
+    }
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.block, function (sprite, otherSprite) {
     animation.runMovementAnimation(
     otherSprite,
@@ -252,7 +265,7 @@ function InitLevel () {
 . . . . . . . . . . . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . 2 . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 . . 2 2 . . . . . . . . . . . . . . 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 . . 2 2 . . . . . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . 2 2 2 . . . . 2 . . . . . 2 . . . . . . . . . . . . 2 . . . 2 2 2 2 . . 2 2 2 2 . . . 2 . . 2 . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
@@ -1326,17 +1339,41 @@ f f f f f f f f f f f f f f f f
         tiles.placeOnTile(plant, value)
         plant.y += -16
     }
+    for (let value of tiles.getTilesByType(myTiles.tile8)) {
+        mystery_box = sprites.create(img`
+4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 4 
+4 5 5 5 5 2 2 2 2 2 2 5 5 5 5 4 
+4 5 5 5 2 5 5 5 5 5 5 2 5 5 5 4 
+4 5 5 2 5 5 5 5 5 5 5 5 2 5 5 4 
+4 5 2 5 5 5 5 5 5 5 5 5 5 2 5 4 
+4 5 2 5 5 5 5 5 5 5 5 5 5 2 5 4 
+4 5 5 5 5 5 5 5 5 5 5 5 5 2 5 4 
+4 5 5 5 5 5 5 5 5 5 5 5 5 2 5 4 
+4 5 5 5 5 5 5 5 5 5 5 5 2 5 5 4 
+4 5 5 5 5 5 5 5 5 5 5 2 5 5 5 4 
+4 5 5 5 5 5 5 5 5 5 2 5 5 5 5 4 
+4 5 5 5 5 5 5 5 5 2 5 5 5 5 5 4 
+4 5 5 5 5 5 5 5 2 5 5 5 5 5 5 4 
+4 5 5 5 5 5 5 5 2 5 5 5 5 5 5 4 
+4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 4 
+4 4 4 4 4 4 4 4 2 4 4 4 4 4 4 4 
+`, SpriteKind.box)
+        tiles.placeOnTile(mystery_box, value)
+    }
 }
 sprites.onOverlap(SpriteKind.Player, SpriteKind.plant, function (sprite, otherSprite) {
     marioDie()
     otherSprite.destroy()
 })
+let mystery_box: Sprite = null
 let plant: Sprite = null
 let braking_block: Sprite = null
 let musharoom: Sprite = null
 let COIN_: Sprite = null
 let LEVEL = 0
 let superMario: Sprite = null
+let randomItemofBox = 0
+randomItemofBox = 0
 info.setLife(3)
 superMario = sprites.create(img`
 . . . . 2 2 2 2 . . . . 
