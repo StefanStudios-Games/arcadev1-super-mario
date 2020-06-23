@@ -4,6 +4,7 @@ namespace SpriteKind {
     export const block = SpriteKind.create()
     export const plant = SpriteKind.create()
     export const box = SpriteKind.create()
+    export const star = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -178,6 +179,9 @@ f f f f f f f f f f f f f f f 1
 4 4 4 4 4 4 2 2 2 4 4 4 4 4 4 4 
 `
 }
+sprites.onOverlap(SpriteKind.plant, SpriteKind.plant, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
 function marioDie () {
     superMario.setImage(img`
 . . . . . . . . . . . . . . . . 
@@ -214,16 +218,26 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
     }
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.box, function (sprite, otherSprite) {
-    randomItemofBox = Math.randomRange(1, 4)
-    if (randomItemofBox == 1) {
-    	
-    } else if (randomItemofBox == 2) {
-    	
-    } else if (randomItemofBox == 3) {
-    	
-    } else if (randomItemofBox == 4) {
-    	
-    }
+    star = sprites.create(img`
+. . . . . . . . . 5 . . . . . . 
+. . . . . . . . 5 5 . . . . . . 
+. . . . . . . . 5 5 . . . . . . 
+. . . . . . . 5 5 5 5 . . . . . 
+. . . . . . 5 5 5 5 5 . . . . . 
+. . . . . . 5 5 5 5 5 5 . . . . 
+5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+. 5 5 5 5 5 5 5 5 5 5 5 5 5 5 . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 . . . 
+. . . 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . 5 5 5 5 5 5 5 5 5 5 5 5 . . 
+. . 5 5 5 5 . . . . 5 5 5 5 . . 
+. 5 5 5 5 . . . . . . 5 5 5 5 . 
+5 5 5 . . . . . . . . . . 5 5 . 
+5 . . . . . . . . . . . . . . 5 
+`, SpriteKind.star)
+    star.setPosition(otherSprite.x, otherSprite.y)
+    star.ay = -200
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.block, function (sprite, otherSprite) {
     animation.runMovementAnimation(
@@ -1358,6 +1372,7 @@ f f f f f f f f f f f f f f f f
 4 5 5 5 5 5 5 5 5 5 5 5 5 5 5 4 
 4 4 4 4 4 4 4 4 2 4 4 4 4 4 4 4 
 `, SpriteKind.box)
+        tiles.setTileAt(value, myTiles.tile0)
         tiles.placeOnTile(mystery_box, value)
     }
 }
@@ -1370,10 +1385,10 @@ let plant: Sprite = null
 let braking_block: Sprite = null
 let musharoom: Sprite = null
 let COIN_: Sprite = null
+let star: Sprite = null
 let LEVEL = 0
 let superMario: Sprite = null
 let randomItemofBox = 0
-randomItemofBox = 0
 info.setLife(3)
 superMario = sprites.create(img`
 . . . . 2 2 2 2 . . . . 
