@@ -6,6 +6,7 @@ namespace SpriteKind {
     export const box = SpriteKind.create()
     export const star = SpriteKind.create()
     export const princess = SpriteKind.create()
+    export const LevelUP = SpriteKind.create()
 }
 namespace myTiles {
     //% blockIdentity=images._tile
@@ -184,6 +185,7 @@ sprites.onOverlap(SpriteKind.plant, SpriteKind.plant, function (sprite, otherSpr
     otherSprite.destroy()
 })
 function marioDie () {
+    marioImage = 3
     superMario.setImage(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
@@ -229,8 +231,7 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.block, function (sprite, otherSp
     otherSprite.destroy(effects.ashes, 200)
 })
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
-    for (let value of tiles.getTilesByType(myTiles.tile8)) {
-        plantLevelUp = sprites.create(img`
+    plantLevelUp = sprites.create(img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 . . . . . 1 1 1 1 1 1 . . . . . 
@@ -247,10 +248,9 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location
 . . . 7 . . 7 7 7 7 . . 7 . . . 
 . . . . 7 . 7 7 7 7 . 7 . . . . 
 . . . . . 7 7 7 7 7 7 . . . . . 
-`, SpriteKind.plant)
-        tiles.placeOnTile(plant, value)
-        plant.y += -16
-    }
+`, SpriteKind.LevelUP)
+    tiles.placeOnTile(plantLevelUp, location)
+    plantLevelUp.y += -16
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, otherSprite) {
     if (sprite.y < otherSprite.top) {
@@ -1390,12 +1390,12 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.plant, function (sprite, otherSp
     otherSprite.destroy()
 })
 let princess: Sprite = null
+let plant: Sprite = null
 let braking_block: Sprite = null
 let musharoom: Sprite = null
 let COIN_: Sprite = null
-let marioImage = 0
-let plant: Sprite = null
 let plantLevelUp: Sprite = null
+let marioImage = 0
 let LEVEL = 0
 let superMario: Sprite = null
 let randomItemofBox = 0
