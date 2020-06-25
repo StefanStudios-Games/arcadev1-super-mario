@@ -225,6 +225,7 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.LevelUP, function (sprite, otherSprite) {
     otherSprite.destroy()
+    marioImage = 2
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.block, function (sprite, otherSprite) {
     animation.runMovementAnimation(
