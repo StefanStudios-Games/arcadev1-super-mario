@@ -1400,6 +1400,26 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.plant, function (sprite, otherSp
     marioDie()
     otherSprite.destroy()
 })
+function shooting () {
+    if (controller.B.isPressed() && !(controller.left.isPressed())) {
+        projectile = sprites.createProjectileFromSprite(img`
+2 2 1 2 2 
+2 2 2 2 2 
+1 2 1 2 1 
+2 2 2 2 2 
+2 2 1 2 2 
+`, superMario, 50, 0)
+    } else if (controller.B.isPressed() && controller.left.isPressed()) {
+        projectile = sprites.createProjectileFromSprite(img`
+2 2 1 2 2 
+2 2 2 2 2 
+1 2 1 2 1 
+2 2 2 2 2 
+2 2 1 2 2 
+`, superMario, -50, 0)
+    }
+}
+let projectile: Sprite = null
 let princess: Sprite = null
 let plant: Sprite = null
 let braking_block: Sprite = null
@@ -1486,6 +1506,7 @@ d d d 1 2 1 1 2 1 d d d
 . 2 2 2 . . . . 2 2 2 . 
 2 2 2 2 . . . . 2 2 2 2 
 `)
+        shooting()
         if (superMario.vx < 0) {
             superMario.image.flipX()
         }
