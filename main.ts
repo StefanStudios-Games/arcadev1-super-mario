@@ -164,21 +164,40 @@ f f f f f f f f f f f f f f f 1
     //% blockIdentity=images._tile
     export const tile8 = img`
 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
-5 f 2 2 2 f 2 2 2 f 2 2 f 2 2 5 
-5 f 2 2 2 f 2 2 2 f 2 2 f 2 2 5 
-5 f f f f f 5 5 5 5 f f f f f 5 
-5 2 f 2 2 5 f 2 2 2 5 2 2 2 f 5 
-5 2 f 2 5 2 f 2 2 2 f 5 2 2 f 5 
-5 f f f 5 f f 5 f f f f 5 f f 5 
-5 f 2 2 2 5 5 5 2 f 2 2 5 f 2 5 
-5 f 2 2 2 f 2 2 2 f 2 2 5 f 2 5 
-5 f f f f f f f f f f f 5 f f 5 
-5 2 2 f 2 2 2 f 2 2 2 5 2 2 2 5 
-5 2 2 f 2 2 2 f 2 2 5 f 2 2 2 5 
-5 f f f f f f f f 5 f f f f f 5 
-5 f 2 2 2 f 2 2 5 f 2 2 f 2 2 5 
-5 f 2 2 2 f 2 2 5 f 2 2 f 2 2 5 
+5 f 4 4 4 4 4 4 4 4 4 4 4 4 f 5 
+5 4 4 4 4 4 4 4 4 4 4 4 4 4 4 5 
+5 4 4 4 4 4 5 5 5 5 4 4 4 4 4 5 
+5 4 4 4 4 5 4 4 4 4 5 4 4 4 4 5 
+5 4 4 4 5 4 4 4 4 4 4 5 4 4 4 5 
+5 4 4 4 5 4 4 5 4 4 4 4 5 4 4 5 
+5 4 4 4 4 5 5 5 4 4 4 4 5 4 4 5 
+5 4 4 4 4 4 4 4 4 4 4 4 5 4 4 5 
+5 4 4 4 4 4 4 4 4 4 4 4 5 4 4 5 
+5 4 4 4 4 4 4 4 4 4 4 5 4 4 4 5 
+5 4 4 4 4 4 4 4 4 4 5 4 4 4 4 5 
+5 4 4 4 4 4 4 4 4 5 4 4 4 4 4 5 
+5 4 4 4 4 4 4 4 5 4 4 4 4 4 4 5 
+5 f 4 4 4 4 4 4 5 4 4 4 4 4 f 5 
 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 5 
+`
+    //% blockIdentity=images._tile
+    export const tile9 = img`
+f f f f f f f f f f f f f f f f 
+f e e e e e e e e e e e e e e f 
+f e f e e e e e e e e e e f e f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f e e e e e e e e e e e e e e f 
+f e f e e e e e e e e e e f e f 
+f e e e e e e e e e e e e e e f 
+f f f f f f f f f f f f f f f f 
 `
 }
 sprites.onOverlap(SpriteKind.plant, SpriteKind.plant, function (sprite, otherSprite) {
@@ -260,7 +279,7 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location
 . . . . . 7 7 7 7 7 7 . . . . . 
 `, SpriteKind.LevelUP)
     tiles.placeOnTile(plantLevelUp, location)
-    tiles.setTileAt(location, myTiles.tile1)
+    tiles.setTileAt(location, myTiles.tile9)
     plantLevelUp.y += -16
     pause(100)
     tiles.setWallAt(location, true)
@@ -305,7 +324,7 @@ function InitLevel () {
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 
 `,
-            [myTiles.tile0,sprites.castle.tilePath2,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.crowd7,myTiles.tile8],
+            [myTiles.tile0,sprites.castle.tilePath2,myTiles.tile1,myTiles.tile2,myTiles.tile3,myTiles.tile4,myTiles.tile5,myTiles.tile6,myTiles.tile7,sprites.builtin.crowd7,myTiles.tile8,myTiles.tile9],
             TileScale.Sixteen
         ))
         tiles.placeOnRandomTile(superMario, myTiles.tile2)
