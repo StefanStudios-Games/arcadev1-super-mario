@@ -237,6 +237,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.block, function (sprite, otherSp
     pause(100)
     otherSprite.destroy(effects.ashes, 200)
 })
+sprites.onOverlap(SpriteKind.musharoom, SpriteKind.Projectile, function (sprite, otherSprite) {
+    sprite.destroy()
+})
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location) {
     plantLevelUp = sprites.create(img`
 . . . . . . . . . . . . . . . . 
@@ -1409,6 +1412,9 @@ function shooting () {
 2 2 2 2 2 
 2 2 1 2 2 
 `, superMario, 50, 0)
+        projectile.ay = 200
+        projectile.setFlag(SpriteFlag.BounceOnWall, true)
+        projectile.setFlag(SpriteFlag.DestroyOnWall, true)
     } else if (controller.B.isPressed() && controller.left.isPressed()) {
         projectile = sprites.createProjectileFromSprite(img`
 2 2 1 2 2 
@@ -1417,6 +1423,9 @@ function shooting () {
 2 2 2 2 2 
 2 2 1 2 2 
 `, superMario, -50, 0)
+        projectile.ay = 200
+        projectile.setFlag(SpriteFlag.BounceOnWall, true)
+        projectile.setFlag(SpriteFlag.DestroyOnWall, true)
     }
 }
 let projectile: Sprite = null
