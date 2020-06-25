@@ -223,6 +223,9 @@ controller.A.onEvent(ControllerButtonEvent.Pressed, function () {
         superMario.vy = -115
     }
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.LevelUP, function (sprite, otherSprite) {
+    otherSprite.destroy()
+})
 sprites.onOverlap(SpriteKind.Player, SpriteKind.block, function (sprite, otherSprite) {
     animation.runMovementAnimation(
     otherSprite,
@@ -253,7 +256,10 @@ scene.onOverlapTile(SpriteKind.Player, myTiles.tile8, function (sprite, location
 . . . . . 7 7 7 7 7 7 . . . . . 
 `, SpriteKind.LevelUP)
     tiles.placeOnTile(plantLevelUp, location)
+    tiles.setTileAt(location, myTiles.tile1)
     plantLevelUp.y += -16
+    pause(100)
+    tiles.setWallAt(location, true)
 })
 sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, otherSprite) {
     if (sprite.y < otherSprite.top) {
@@ -285,7 +291,7 @@ function InitLevel () {
 . . . . . . . . . . . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 
 . . . . . . . . . . . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 
 . . . . . . . . . . . . . . . . . . . . . . . . 2 . . . . . . . . . . . . . . 2 . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 2 
-. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 . . 2 2 . . . . . . . . . . . . . . 2 2 2 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 2 2 
+. . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 . . 2 2 . . . . . . . . . . . . . . 2 2 2 . 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 2 2 2 2 2 2 
 . . . . . . 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 2 2 . . 2 2 2 . . . . . . . . . . . . . . . . . . . . . . . . . . . . . 2 . . . . 2 . . . . . . . . . . 2 2 2 2 2 2 2 2 2 2 
 . . . . . . 2 2 2 . . . . 2 . . . . . 2 . . . . . . . . . . . . 2 . . . 2 2 2 2 . . 2 2 2 2 . . . 2 . . 2 . . 2 . . . . . . . . . . 2 . . 2 . . . . 2 . . . . 2 . . . . . . . 2 . 2 2 2 2 2 2 2 2 2 2 2 
 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 . . 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 2 
