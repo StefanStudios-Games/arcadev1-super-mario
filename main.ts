@@ -187,27 +187,30 @@ sprites.onOverlap(SpriteKind.plant, SpriteKind.plant, function (sprite, otherSpr
 function marioDie () {
     marioImage = 3
     superMario.setImage(img`
-. . . . . . . . . . . . . . . . 
-. . . . . . . . . . . . . . . . 
-. . . . . . 2 2 2 2 . . . . . . 
-. . . . . 2 2 2 2 2 2 . . . . . 
-. . . . . 4 f 4 4 f 4 . . . . . 
-. . . . . 4 f e e f 4 . . . . . 
-. . . . . 4 e e e e 4 . . . . . 
-. . . 4 4 4 4 4 4 4 4 4 4 . . . 
-. . 4 4 4 . 4 4 4 4 . 4 4 4 . . 
-. . . 4 4 . 2 2 2 2 . 4 4 . . . 
-. . . 8 8 8 2 2 2 2 8 8 8 . . . 
-. . e e 8 8 2 2 2 2 8 8 e e . . 
-. . e e e 8 8 2 2 8 8 e e e . . 
-. . e e e 8 5 8 8 5 8 e e e . . 
-. . e e e 8 8 8 8 8 8 e e e . . 
-. . . e e 8 8 8 8 8 8 e e . . . 
+. . . . . . 5 . 5 . 5 . 5 . . . . . . . 
+. . . . . . . 5 . 5 . 5 . . . . . . . . 
+. . . . . . . . 2 2 2 2 . . . . . . . . 
+. . . . . . . 2 2 2 2 2 2 2 2 . . . . . 
+. . . . . . . e e e 4 4 4 . . . . . . . 
+. . . . . . e 4 e 4 4 f 4 . . . . . . . 
+. . . . . . e 4 e e 4 f 4 4 4 . . . . . 
+. . . . . . e e 4 4 4 4 e 4 . . . . . . 
+f f f . . . . . 4 4 4 e e e . . . f f f 
+f 1 1 f . . . . . 4 4 4 4 . . . f 1 1 f 
+f f 1 1 f f f f d d d d f f f f 1 1 f f 
+. . f 1 1 1 f d d d d d d f 1 1 1 f . . 
+. . . f 1 f d d d d d d d d f 1 f . . . 
+. . . . f d d d d d d d d d d f . . . . 
+. . . . d d d d 5 d d 5 d d d d . . . . 
+. . . . 4 4 d d d d d d d d 4 4 . . . . 
+. . . . 4 4 4 d d d d d d 4 4 4 . . . . 
+. . . . 4 4 d d d d d d d d 4 4 . . . . 
+. . . . . . d d d . . d d d . . . . . . 
+. . . . . d d d . . . . d d d . . . . . 
+. . . . d d d d . . . . d d d d . . . . 
 `)
-    superMario.ay = -200
-    pause(500)
-    superMario.ay = 200
-    pause(1000)
+    superMario.ay = -100
+    pause(2000)
     InitLevel()
     info.changeLifeBy(-1)
 }
@@ -300,6 +303,7 @@ function InitLevel () {
     } else {
     	
     }
+    superMario.ay = 200
     for (let value of tiles.getTilesByType(myTiles.tile3)) {
         tiles.setTileAt(value, myTiles.tile0)
         COIN_ = sprites.create(img`
