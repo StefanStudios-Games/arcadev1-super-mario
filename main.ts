@@ -2053,10 +2053,84 @@ e e e . . . . . . . . . . . .
 e e e . . . . . . . . . . . . 
 e e e . . . . . . . . . . . . 
 e e e . . . . . . . . . . . . 
+`,img`
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+e e e e . . . . . . . . . . . 
+7 e e e . . . . . . . . . . . 
+7 7 7 . . . . . . . . . . . . 
+7 7 7 7 7 . . . . . . . . . . 
+7 7 7 7 7 7 7 . . . . . . . . 
+7 7 7 7 7 7 7 7 . . . . . . . 
+7 7 7 7 7 7 7 7 7 . . . . . . 
+7 7 7 7 7 7 7 7 7 7 7 . . . . 
+7 7 7 7 7 7 7 7 7 7 7 7 7 . . 
+7 7 7 7 7 7 7 7 7 7 7 7 7 7 . 
 `],
     50,
     false
     )
+    pause(2000)
+    otherSprite.destroy()
+    flag += 1
 })
 function marioDie () {
     marioImage = 3
@@ -3380,7 +3454,6 @@ function shooting () {
     }
 }
 let projectile: Sprite = null
-let flag: Sprite = null
 let princess: Sprite = null
 let plant: Sprite = null
 let braking_block: Sprite = null
@@ -3388,6 +3461,7 @@ let musharoom: Sprite = null
 let COIN_: Sprite = null
 let plantLevelUp: Sprite = null
 let marioImage = 0
+let flag = 0
 let LEVEL = 0
 let superMario: Sprite = null
 let randomItemofBox = 0
