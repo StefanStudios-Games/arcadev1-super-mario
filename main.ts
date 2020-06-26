@@ -2130,7 +2130,7 @@ e e e e . . . . . . . . . . .
     )
     pause(2000)
     otherSprite.destroy()
-    flag += 1
+    LEVEL += 1
 })
 function marioDie () {
     marioImage = 3
@@ -3454,6 +3454,7 @@ function shooting () {
     }
 }
 let projectile: Sprite = null
+let flag: Sprite = null
 let princess: Sprite = null
 let plant: Sprite = null
 let braking_block: Sprite = null
@@ -3461,7 +3462,6 @@ let musharoom: Sprite = null
 let COIN_: Sprite = null
 let plantLevelUp: Sprite = null
 let marioImage = 0
-let flag = 0
 let LEVEL = 0
 let superMario: Sprite = null
 let randomItemofBox = 0
