@@ -296,6 +296,15 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.musharoom, function (sprite, oth
 scene.onOverlapTile(SpriteKind.Player, myTiles.tile7, function (sprite, location) {
     InitLevel()
 })
+scene.onHitWall(SpriteKind.musharoom, function (sprite) {
+    if (sprite.isHittingTile(CollisionDirection.Right) || sprite.isHittingTile(CollisionDirection.Left)) {
+        if (sprite.vx > 0) {
+            sprite.vx = -50
+        } else {
+            sprite.vx = 50
+        }
+    }
+})
 function InitLevel () {
     if (LEVEL == 1) {
         tiles.setTilemap(tiles.createTilemap(
@@ -540,7 +549,6 @@ f f f d d d d d d d d d f f f
         tiles.placeOnTile(musharoom, value)
         musharoom.ay = 200
         musharoom.vx = 50
-        musharoom.setFlag(SpriteFlag.BounceOnWall, true)
     }
     for (let value of tiles.getTilesByType(myTiles.tile5)) {
         tiles.setTileAt(value, myTiles.tile0)
