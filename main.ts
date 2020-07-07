@@ -1598,3 +1598,25 @@ d d d 1 2 1 1 2 1 d d d
     	
     }
 })
+game.onUpdate(function () {
+    let turtleREACTION = 0
+    if (turtleREACTION == 1) {
+        turtles.setImage(img`
+. . . . . . . . e . . . . . . . . . 
+. . . . . . . e 7 e . . . . . . . . 
+. . . . . . e 7 e 7 e . . . . . . . 
+. . . . . e 7 e 7 e 7 e . . . 7 7 7 
+. . . . e 7 e 7 e 7 e 7 e . . 7 f 7 
+. . . e 7 e 7 e 7 e 7 e 7 e . 7 7 7 
+e e e 7 e 7 e 7 e 7 e 7 e 7 e 7 e 7 
+e e e e e e e e e e e e e e e 7 7 e 
+e . f f f . . . . . . . f f f . . . 
+. . f f f . . . . . . . f f f . . . 
+. . f f f . . . . . . . f f f . . . 
+`)
+    } else if (turtleREACTION == 2) {
+    	
+    } else if (turtleREACTION == 3) {
+    	
+    }
+})
