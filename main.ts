@@ -228,9 +228,9 @@ sprites.onOverlap(SpriteKind.Player, SpriteKind.turtle, function (sprite, otherS
     if (sprite.y < otherSprite.top) {
         superMario.vy = -115
         turtleREACTION = 3
+        turtles.vx = 0
     } else {
-        otherSprite.destroy()
-        marioDie()
+    	
     }
 })
 function marioDie () {
@@ -1533,7 +1533,6 @@ function shooting () {
     }
 }
 let projectile: Sprite = null
-let turtles: Sprite = null
 let princess: Sprite = null
 let plant: Sprite = null
 let braking_block: Sprite = null
@@ -1541,6 +1540,7 @@ let musharoom: Sprite = null
 let COIN_: Sprite = null
 let plantLevelUp: Sprite = null
 let marioImage = 0
+let turtles: Sprite = null
 let turtleREACTION = 0
 let LEVEL = 0
 let superMario: Sprite = null
