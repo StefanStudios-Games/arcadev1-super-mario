@@ -1311,17 +1311,32 @@ f f 1 1 f f f f d d d d f f f f 1 1 f f
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
 `</field></shadow><block type="screen_image_picker" id="h#`=Pu|_gTt[Pk9qJ*Pe"><field name="img">img`
-. . . . . . . . e . . . . . . . . . 
-. . . . . . . e 7 e . . . . . . . . 
-. . . . . . e 7 e 7 e . . . . . . . 
-. . . . . e 7 e 7 e 7 e . . . 7 7 7 
-. . . . e 7 e 7 e 7 e 7 e . . 7 f 7 
-. . . e 7 e 7 e 7 e 7 e 7 e . 7 7 7 
-e e e 7 e 7 e 7 e 7 e 7 e 7 e 7 e 7 
-e e e e e e e e e e e e e e e 7 7 e 
-e . f f f . . . . . . . f f f . . . 
-. . f f f . . . . . . . f f f . . . 
-. . f f f . . . . . . . f f f . . . 
+. . . . . . . . . . . . . . . . . f f . . . . . . 
+. . . . . . . . . . . . . . . . f 1 1 f . . . . . 
+. . . . . . . . . . . . . . . . f 1 1 f . . . . . 
+. . . . . . . . . . . . . . . f f 1 1 1 f . . . . 
+. . . . . . . . . . . . . . f . f 1 1 f f . . . . 
+. . . . . . . . . . . . . . f . f 1 1 f f . . . . 
+. . . . . . . . . . . . . . f . . 1 1 f f . . . . 
+. . . . . . . . . . . . . . f . . 1 1 1 f . . . . 
+. . . . . . . . . . f f f . . f . . 1 f . f . . . 
+. . . . . . . . . f 7 7 7 f f f . . . . . f . . . 
+. . . . . . . . f 7 f 7 f 7 f . . f f . . f . . . 
+. . . . . . . . f 7 7 f 7 7 f f . f . f . f . . . 
+. . . . . . . f 7 7 f 7 f 7 f f . f . . f f . . . 
+. . . . . . . f 7 f 7 7 7 f 7 f . . f . . . . . . 
+. . . . . . . f f 7 7 7 7 7 f f f . . f f . . . . 
+. . . . . . . f 7 f 7 7 7 f 7 7 f . . . f . . . . 
+. . . . . . . f 7 7 f 7 f 7 7 7 f . f f . . . . . 
+. . . . . . . f 7 7 7 f 7 7 7 f f . f . . . . . . 
+. . . . . . . . f 7 f 7 f 7 f . f f . . . . . . . 
+. . . . . . . f f f f f f f f . f . . . . . . . . 
+. . . . . . . f . . . . . . . . f . . . . . . . . 
+. . . . . . . f . . . . . . . . f . . . . . . . . 
+. . . . . . . f . . . . . f . . . f . . . . . . . 
+. . . . . . . f f f f f f f . . . . f . . . . . . 
+. . . . . . f . . . . f . f . . . . . f . . . . . 
+. . . . . . f f f f f f . f f f f f f f . . . . . 
 `</field></block></value></block></statement><value name="IF1"><block type="logic_compare" id="*HcU:EUm#rLsN~Z9#cTT"><field name="OP">EQ</field><value name="A"><shadow type="math_number"><field name="NUM">0</field></shadow><block type="variables_get" id="--n{{d85g4ua=u+EJ^XP"><field name="VAR" id="?7me0AWe{J9R#_MH.b!U">turtleREACTION</field></block></value><value name="B"><shadow type="math_number" id=";A-6:S4e0?T`NB#Qcs:;"><field name="NUM">2</field></shadow></value></block></value><statement name="DO1"><block type="spritesetimage" id="*%]wEO;*_L8mjm3bxzYZ"><value name="sprite"><block type="variables_get" id="py`os?[db-ee(g4YX,TQ"><field name="VAR" id="qKdVQl}?Enf71+RZ0TAQ">turtles</field></block></value><value name="img"><shadow type="screen_image_picker"><field name="img">img`
 . . . . . . . . . . . . . . . . 
 . . . . . . . . . . . . . . . . 
