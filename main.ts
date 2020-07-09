@@ -224,6 +224,15 @@ f f f f f f f f f f f f f f f f
 sprites.onOverlap(SpriteKind.plant, SpriteKind.plant, function (sprite, otherSprite) {
     otherSprite.destroy()
 })
+sprites.onOverlap(SpriteKind.Player, SpriteKind.turtle, function (sprite, otherSprite) {
+    if (sprite.y < otherSprite.top) {
+        superMario.vy = -115
+        turtleREACTION = 3
+    } else {
+        otherSprite.destroy()
+        marioDie()
+    }
+})
 function marioDie () {
     marioImage = 3
     superMario.setImage(img`
@@ -325,10 +334,14 @@ scene.onHitWall(SpriteKind.musharoom, function (sprite) {
 })
 scene.onHitWall(SpriteKind.turtle, function (sprite) {
     if (sprite.isHittingTile(CollisionDirection.Right)) {
-        sprite.image.flipX()
+        if (!(turtleREACTION == 3)) {
+            turtleREACTION = 2
+        }
         sprite.vx = -50
     } else if (sprite.isHittingTile(CollisionDirection.Left)) {
-        sprite.image.flipX()
+        if (!(turtleREACTION == 3)) {
+            turtleREACTION = 1
+        }
         sprite.vx = 50
     }
 })
@@ -1465,6 +1478,7 @@ e . f f f . . . . . . . f f f . . .
 . . f f f . . . . . . . f f f . . . 
 . . f f f . . . . . . . f f f . . . 
 `, SpriteKind.turtle)
+        turtleREACTION = 1
         tiles.placeOnTile(turtles, value)
         turtles.ay = 200
         turtles.vx = 50
@@ -1511,6 +1525,7 @@ let musharoom: Sprite = null
 let COIN_: Sprite = null
 let plantLevelUp: Sprite = null
 let marioImage = 0
+let turtleREACTION = 0
 let LEVEL = 0
 let superMario: Sprite = null
 let randomItemofBox = 0
@@ -1599,7 +1614,6 @@ d d d 1 2 1 1 2 1 d d d
     }
 })
 game.onUpdate(function () {
-    let turtleREACTION = 0
     if (turtleREACTION == 1) {
         turtles.setImage(img`
 . . . . . . . . e . . . . . . . . . 
@@ -1615,8 +1629,33 @@ e . f f f . . . . . . . f f f . . .
 . . f f f . . . . . . . f f f . . . 
 `)
     } else if (turtleREACTION == 2) {
-    	
+        turtles.setImage(img`
+. . . . . . . . e . . . . . . . . . 
+. . . . . . . e 7 e . . . . . . . . 
+. . . . . . e 7 e 7 e . . . . . . . 
+. . . . . e 7 e 7 e 7 e . . . 7 7 7 
+. . . . e 7 e 7 e 7 e 7 e . . 7 f 7 
+. . . e 7 e 7 e 7 e 7 e 7 e . 7 7 7 
+e e e 7 e 7 e 7 e 7 e 7 e 7 e 7 e 7 
+e e e e e e e e e e e e e e e 7 7 e 
+e . f f f . . . . . . . f f f . . . 
+. . f f f . . . . . . . f f f . . . 
+. . f f f . . . . . . . f f f . . . 
+`)
+        turtles.image.flipX()
     } else if (turtleREACTION == 3) {
-    	
+        turtles.setImage(img`
+. . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . 
+. . . . . . . . . . . . . . . . . . 
+. . . . . . . . e . . . . . . . . . 
+. . . . . . . e 7 e . . . . . . . . 
+. . . . . . e 7 e 7 e . . . . . . . 
+. . . . . e 7 e 7 e 7 e . . . . . . 
+. . . . e 7 e 7 e 7 e 7 e . . . . . 
+. . . e 7 e 7 e 7 e 7 e 7 e . . . . 
+. . e 7 e 7 e 7 e 7 e 7 e 7 e . . . 
+. e e e e e e e e e e e e e e e . . 
+`)
     }
 })
