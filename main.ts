@@ -240,20 +240,20 @@ function marioDie () {
 . . . . . . . 5 . 5 . 5 . . . . . . . . 
 . . . . . . . . 2 2 2 2 . . . . . . . . 
 . . . . . . . 2 2 2 2 2 2 2 2 . . . . . 
-. . . . . . . e e e 4 4 4 . . . . . . . 
-. . . . . . e 4 e 4 4 f 4 . . . . . . . 
-. . . . . . e 4 e e 4 f 4 4 4 . . . . . 
-. . . . . . e e 4 4 4 4 e 4 . . . . . . 
-f f f . . . . . 4 4 4 e e e . . . f f f 
-f 1 1 f . . . . . 4 4 4 4 . . . f 1 1 f 
+. . . . . . . e e e d d d . . . . . . . 
+. . . . . . e d e d d f d . . . . . . . 
+. . . . . . e d e e d f d d d . . . . . 
+. . . . . . e e d d d d e d . . . . . . 
+f f f . . . . . d d d e e e . . . f f f 
+f 1 1 f . . . . . d d d d . . . f 1 1 f 
 f f 1 1 f f f f d d d d f f f f 1 1 f f 
 . . f 1 1 1 f d d d d d d f 1 1 1 f . . 
 . . . f 1 f d d d d d d d d f 1 f . . . 
 . . . . f d d d d d d d d d d f . . . . 
 . . . . d d d d 5 d d 5 d d d d . . . . 
-. . . . 4 4 d d d d d d d d 4 4 . . . . 
-. . . . 4 4 4 d d d d d d 4 4 4 . . . . 
-. . . . 4 4 d d d d d d d d 4 4 . . . . 
+. . . . d d d d d d d d d d d d . . . . 
+. . . . d d d d d d d d d d d d . . . . 
+. . . . d d d d d d d d d d d d . . . . 
 . . . . . . d d d . . d d d . . . . . . 
 . . . . . d d d . . . . d d d . . . . . 
 . . . . d d d d . . . . d d d d . . . . 
@@ -570,21 +570,22 @@ e e e e . . . . e e e e
     for (let value of tiles.getTilesByType(myTiles.tile4)) {
         tiles.setTileAt(value, myTiles.tile0)
         musharoom = sprites.create(img`
-. . . . . . e e e . . . . . . 
-. . . . . e e e e e . . . . . 
-. . . . e e e e e e e . . . . 
-. . . e f e e e e e f e . . . 
-. . e e e f f e f f e e e . . 
-. e e e e e e f e e e e e e . 
-e e e e 1 1 1 e 1 1 1 e e e e 
-. . . d 1 f 1 d 1 f 1 d . . . 
-. . . d 1 1 1 d 1 1 1 d . . . 
-. . . d d d d d d d d d . . . 
-. . . d d d d d d d d d . . . 
-. . . d d d d d d d d d . . . 
-f f f d d d d d d d d d f f f 
-f f f d d d d d d d d d f f f 
-f f f d d d d d d d d d f f f 
+. . . . . . e e e e . . . . . . 
+. . . . . e e e e e e . . . . . 
+. . . . e e e e e e e e . . . . 
+. . . e e e e e e e e e e . . . 
+. . e e e f f f e f f f e e . . 
+. e e e e 1 1 f e f 1 1 e e e . 
+. e e e e 1 1 f e f 1 1 e e e . 
+e e e e e 1 f 1 e 1 f 1 e e e e 
+e e e e e 1 1 1 e 1 1 1 e e e e 
+d d d e e e e e e e e e e d d d 
+d d d d d d d d d d d d d d d d 
+. d d d d d d d d d d d d d d . 
+. . . . d d d d d d d d . . . . 
+. . f f f d d d d d 4 f f f . . 
+. f f f f d d d d d 4 f f f f . 
+. f f f f d d d d 4 1 f f f f . 
 `, SpriteKind.musharoom)
         tiles.placeOnTile(musharoom, value)
         musharoom.ay = 200
@@ -1533,20 +1534,20 @@ info.setLife(3)
 superMario = sprites.create(img`
 . . . . 2 2 2 2 . . . . 
 . . . 2 2 2 2 2 2 2 2 . 
-. . . e e e 4 4 4 . . . 
-. . e 4 e 4 4 f 4 . . . 
-. . e 4 e e 4 f 4 4 4 . 
-. . e e 4 4 4 4 e 4 . . 
-. . . . 4 4 4 e e e . . 
-. . . . . 4 4 4 4 . . . 
+. . . e e e d d d . . . 
+. . e d e d d f d . . . 
+. . e d e e d f d d d . 
+. . e e d d d d e d . . 
+. . . . d d d e e e . . 
+. . . . . d d d d . . . 
 . . . . 8 2 2 2 . . . . 
 . . . 2 8 2 2 8 2 . . . 
 . . 2 2 8 2 2 8 2 2 . . 
 . 2 2 2 8 8 8 8 2 2 2 . 
 2 2 2 8 5 8 8 5 8 2 2 2 
-4 4 2 8 8 8 8 8 8 2 4 4 
-4 4 4 8 8 8 8 8 8 4 4 4 
-4 4 8 8 8 8 8 8 8 8 4 4 
+d d 2 8 8 8 8 8 8 2 d d 
+d d d 8 8 8 8 8 8 d d d 
+d d 8 8 8 8 8 8 8 8 d d 
 . . 8 8 8 . . 8 8 8 . . 
 . e e e . . . . e e e . 
 e e e e . . . . e e e e 
@@ -1562,20 +1563,20 @@ game.onUpdate(function () {
         superMario.setImage(img`
 . . . . 2 2 2 2 . . . . 
 . . . 2 2 2 2 2 2 2 2 . 
-. . . e e e 4 4 4 . . . 
-. . e 4 e 4 4 f 4 . . . 
-. . e 4 e e 4 f 4 4 4 . 
-. . e e 4 4 4 4 e 4 . . 
-. . . . 4 4 4 e e e . . 
-. . . . . 4 4 4 4 . . . 
+. . . e e e d d d . . . 
+. . e d e d d f d . . . 
+. . e d e e d f d d d . 
+. . e e d d d d e d . . 
+. . . . d d d e e e . . 
+. . . . . d d d d . . . 
 . . . . 8 2 2 2 . . . . 
 . . . 2 8 2 2 8 2 . . . 
 . . 2 2 8 2 2 8 2 2 . . 
 . 2 2 2 8 8 8 8 2 2 2 . 
 2 2 2 8 5 8 8 5 8 2 2 2 
-4 4 2 8 8 8 8 8 8 2 4 4 
-4 4 4 8 8 8 8 8 8 4 4 4 
-4 4 8 8 8 8 8 8 8 8 4 4 
+d d 2 8 8 8 8 8 8 2 d d 
+d d d 8 8 8 8 8 8 d d d 
+d d 8 8 8 8 8 8 8 8 d d 
 . . 8 8 8 . . 8 8 8 . . 
 . e e e . . . . e e e . 
 e e e e . . . . e e e e 
@@ -1587,20 +1588,20 @@ e e e e . . . . e e e e
         superMario.setImage(img`
 . . . . 2 2 2 2 . . . . 
 . . . 2 2 2 2 2 2 2 2 . 
-. . . e e e 4 4 4 . . . 
-. . e 4 e 4 4 f 4 . . . 
-. . e 4 e e 4 f 4 4 4 . 
-. . e e 4 4 4 4 e 4 . . 
-. . . . 4 4 4 e e e . . 
-. . . . . 4 4 4 4 . . . 
-. . . . 1 d d d . . . . 
-. . . d 1 d d 1 d . . . 
-. . d d 1 d d 1 d d . . 
-. d d d 1 1 1 1 d d d . 
-d d d 1 2 1 1 2 1 d d d 
-4 4 d 1 1 1 1 1 1 d 4 4 
-4 4 4 1 1 1 1 1 1 4 4 4 
-4 4 1 1 2 2 2 2 1 1 4 4 
+. . . e e e d d d . . . 
+. . e d e d d f d . . . 
+. . e d e e d f d d d . 
+. . e e d d d d e d . . 
+. . . . d d d e e e . . 
+. . . . . d d d d . . . 
+. . . . 1 4 4 4 . . . . 
+. . . 4 1 4 4 1 4 . . . 
+. . 4 4 1 4 4 1 4 4 . . 
+. 4 4 4 1 1 1 1 4 4 4 . 
+4 4 4 1 2 1 1 2 1 4 4 4 
+d d 4 1 1 1 1 1 1 4 d d 
+d d d 1 1 1 1 1 1 d d d 
+d d 1 1 2 2 2 2 1 1 d d 
 . . 1 2 2 . . 2 2 1 . . 
 . 2 2 2 . . . . 2 2 2 . 
 2 2 2 2 . . . . 2 2 2 2 
